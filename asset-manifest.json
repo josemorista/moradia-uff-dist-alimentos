@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/moradia-uff-dist-alimentos/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/moradia-uff-dist-alimentos/static/js/main.cd8e48e0.chunk.js",
-    "main.js.map": "/moradia-uff-dist-alimentos/static/js/main.cd8e48e0.chunk.js.map",
+    "main.js": "/moradia-uff-dist-alimentos/static/js/main.b4280da4.chunk.js",
+    "main.js.map": "/moradia-uff-dist-alimentos/static/js/main.b4280da4.chunk.js.map",
     "runtime-main.js": "/moradia-uff-dist-alimentos/static/js/runtime-main.4295c8c2.js",
     "runtime-main.js.map": "/moradia-uff-dist-alimentos/static/js/runtime-main.4295c8c2.js.map",
     "static/js/2.4fb08857.chunk.js": "/moradia-uff-dist-alimentos/static/js/2.4fb08857.chunk.js",
     "static/js/2.4fb08857.chunk.js.map": "/moradia-uff-dist-alimentos/static/js/2.4fb08857.chunk.js.map",
     "index.html": "/moradia-uff-dist-alimentos/index.html",
-    "precache-manifest.5fb972f3938fd9003f5967c6e6307661.js": "/moradia-uff-dist-alimentos/precache-manifest.5fb972f3938fd9003f5967c6e6307661.js",
+    "precache-manifest.f604714a97035c1a3182b66b4695247d.js": "/moradia-uff-dist-alimentos/precache-manifest.f604714a97035c1a3182b66b4695247d.js",
     "service-worker.js": "/moradia-uff-dist-alimentos/service-worker.js",
     "static/css/main.5ecd60fb.chunk.css.map": "/moradia-uff-dist-alimentos/static/css/main.5ecd60fb.chunk.css.map",
     "static/js/2.4fb08857.chunk.js.LICENSE.txt": "/moradia-uff-dist-alimentos/static/js/2.4fb08857.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.4295c8c2.js",
     "static/js/2.4fb08857.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.cd8e48e0.chunk.js"
+    "static/js/main.b4280da4.chunk.js"
   ]
 }
