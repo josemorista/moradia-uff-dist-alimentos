@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/moradia-uff-dist-alimentos/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/moradia-uff-dist-alimentos/static/js/main.d4990e2e.chunk.js",
+    "main.js.map": "/moradia-uff-dist-alimentos/static/js/main.d4990e2e.chunk.js.map",
+    "runtime-main.js": "/moradia-uff-dist-alimentos/static/js/runtime-main.4295c8c2.js",
+    "runtime-main.js.map": "/moradia-uff-dist-alimentos/static/js/runtime-main.4295c8c2.js.map",
+    "static/js/2.e577fe4b.chunk.js": "/moradia-uff-dist-alimentos/static/js/2.e577fe4b.chunk.js",
+    "static/js/2.e577fe4b.chunk.js.map": "/moradia-uff-dist-alimentos/static/js/2.e577fe4b.chunk.js.map",
+    "index.html": "/moradia-uff-dist-alimentos/index.html",
+    "precache-manifest.4ea2055742623e28455e04096bb381cb.js": "/moradia-uff-dist-alimentos/precache-manifest.4ea2055742623e28455e04096bb381cb.js",
+    "service-worker.js": "/moradia-uff-dist-alimentos/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/moradia-uff-dist-alimentos/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.e577fe4b.chunk.js.LICENSE.txt": "/moradia-uff-dist-alimentos/static/js/2.e577fe4b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4295c8c2.js",
+    "static/js/2.e577fe4b.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.d4990e2e.chunk.js"
+  ]
+}
