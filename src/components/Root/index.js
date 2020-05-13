@@ -6,6 +6,7 @@ export default function Root() {
   const [items, setItems] = useState([])
   const [total, setTotal] = useState(0)
   const [item, setItem] = useState({})
+  const [decimals, setDecimals] = useState(2)
   const [results, setResults] = useState([{}])
 
   useEffect(() => {
@@ -22,15 +23,15 @@ export default function Root() {
   useEffect(() => {
     const newResults = [...results]
     for (let index = 0; index < newResults.length; index++) {
-      if (newResults[index].result) {
-        newResults[index].result = ''
+      if (newResults[index].result && newResults[index].result.length > 0) {
+        newResults[index].result = []
         for (let i = 0; i < items.length; i++) {
-          newResults[index].result += `${(items[i].qnt / total) * newResults[index].qnt} ${type} de ${items[i].name}\n`
+          newResults[index].result.push(`${((items[i].qnt / total) * newResults[index].qnt).toFixed(decimals)} ${type} de ${items[i].name}`)
         }
       }
     }
     setResults(newResults)
-  }, [items, total])
+  }, [items, total, decimals])
 
   return (
     <Grid container justify="center" style={{ marginTop: '20px' }}>
@@ -44,6 +45,7 @@ export default function Root() {
         <br />
         <TextField
           variant="outlined"
+          style={{ margin: '8px', marginLeft: '0px' }}
           select
           label="Tipo de operação"
           value={type}
@@ -60,6 +62,23 @@ export default function Root() {
           <MenuItem value="kg">Divisão por Kg</MenuItem>
           <MenuItem value="items">Divisão por items</MenuItem>
         </TextField>
+        <TextField
+          variant="outlined"
+          label="Precisão"
+          style={{ margin: '8px', maxWidth: '70px' }}
+          type="Number"
+          value={decimals}
+          onChange={(e) => {
+            let tmp = Number(e.target.value)
+            if (tmp < 0) {
+              tmp = 0
+            }
+            if (tmp > 6) {
+              tmp = 6
+            }
+            setDecimals(tmp)
+          }}
+        />
         <br />
         <br />
         {items.length > 0 ? (
@@ -82,7 +101,7 @@ export default function Root() {
         <br />
         <Paper variant="outlined" style={{ padding: '20px', paddingLeft: '0px' }}>
           <TextField variant="outlined" label="Nome do item" type="text" style={{ margin: '8px' }} value={item.name || ''} onChange={(e) => setItem({ ...item, name: e.target.value })} />
-          <TextField variant="outlined" label="Quantidade" type="number" style={{ margin: '8px' }} value={item.qnt || ''} onChange={(e) => setItem({ ...item, qnt: e.target.value })} />
+          <TextField variant="outlined" label={'Quantidade em ' + type} type="number" style={{ margin: '8px' }} value={item.qnt || ''} onChange={(e) => setItem({ ...item, qnt: e.target.value })} />
           <br />
           <Grid container justify="flex-end">
             <Button
@@ -128,23 +147,31 @@ export default function Root() {
               onChange={(e) => {
                 const newResults = [...results]
                 newResults[index].qnt = Number(e.target.value)
-                newResults[index].result = ''
+                newResults[index].result = []
                 for (let i = 0; i < items.length; i++) {
-                  newResults[index].result += `${(items[i].qnt / total) * newResults[index].qnt} ${type} de ${items[i].name}\n`
+                  newResults[index].result.push(`${((items[i].qnt / total) * newResults[index].qnt).toFixed(decimals)} ${type} de ${items[i].name}`)
                 }
                 setResults(newResults)
               }}
             />
             <br />
             {results[index].result ? (
-              <Typography style={{ margin: '8px' }}>
-                <b>Esta ala deve receber: {results[index].result}</b>
-              </Typography>
+              <div>
+                <Typography style={{ margin: '8px' }}>
+                  <b>Esta ala deve receber:</b>
+                </Typography>
+                <br />
+                <ul>
+                  {results[index].result.map((el, index) => (
+                    <li key={index}> {el} </li>
+                  ))}
+                </ul>
+              </div>
             ) : null}
           </Paper>
         ))}
         <br />
-        <Button variant="outlined" onClick={() => setResults([...results, {}])}>
+        <Button variant="outlined" onClick={() => setResults([...results, {}])} style={{ marginBottom: '10px' }}>
           Adicionar ala
         </Button>
       </Grid>
