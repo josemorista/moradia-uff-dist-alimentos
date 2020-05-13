@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "394c5657f1e4b7d9c803370734ef859a",
+    "revision": "650357d809c9cc2bcb9e1c7f5fe414ed",
     "url": "/moradia-uff-dist-alimentos/index.html"
   },
   {
-    "revision": "7a53ecda632fa7ae8762",
+    "revision": "a05bd3d9139f2bd839bc",
     "url": "/moradia-uff-dist-alimentos/static/css/main.5ecd60fb.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/moradia-uff-dist-alimentos/static/js/2.4fb08857.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7a53ecda632fa7ae8762",
-    "url": "/moradia-uff-dist-alimentos/static/js/main.797ee210.chunk.js"
+    "revision": "a05bd3d9139f2bd839bc",
+    "url": "/moradia-uff-dist-alimentos/static/js/main.cd8e48e0.chunk.js"
   },
   {
     "revision": "bdf8a3dfe166d1093507",

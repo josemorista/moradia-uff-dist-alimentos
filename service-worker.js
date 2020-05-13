@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/moradia-uff-dist-alimentos/precache-manifest.7782a58419c489adc1fdd35321042883.js"
+  "/moradia-uff-dist-alimentos/precache-manifest.5fb972f3938fd9003f5967c6e6307661.js"
 );
 
 self.addEventListener('message', (event) => {
