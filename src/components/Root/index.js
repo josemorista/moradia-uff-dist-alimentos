@@ -15,7 +15,6 @@ export default function Root() {
       items.forEach((el) => {
         tmp += Number(el.qnt)
       })
-      console.log(tmp)
       setTotal(tmp)
     }
   }, [items, type])
@@ -26,7 +25,8 @@ export default function Root() {
       if (newResults[index].result && newResults[index].result.length > 0) {
         newResults[index].result = []
         for (let i = 0; i < items.length; i++) {
-          newResults[index].result.push(`${((items[i].qnt / total) * newResults[index].qnt).toFixed(decimals)} ${type} de ${items[i].name}`)
+          const result = ((items[i].qnt / total) * newResults[index].qnt).toFixed(decimals);
+          newResults[index].result.push(`${result} ${type} de ${items[i].name}${type === 'kg' && items[i].byPackage ? ` em ${result/Number(items[i].byPackage)} pacotes de ${items[i].byPackage}kg` : ''}`)
         }
       }
     }
@@ -87,7 +87,7 @@ export default function Root() {
             <List>
               {items.map((el, index) => (
                 <ListItem key={index}>
-                  <ListItemText primary={el.name} secondary={`${el.qnt} ${type}`} />{' '}
+                  <ListItemText primary={el.name} secondary={`${el.qnt} ${type} ${el.byPackage && type === 'kg' ? `- ${el.byPackage}kg por pacote`: ''}`} />{' '}
                   <ListItemSecondaryAction>
                     <Button variant="outlined" onClick={() => setItems(items.filter((el, i) => i !== index))}>
                       Remover
@@ -103,6 +103,7 @@ export default function Root() {
         <Paper variant="outlined" style={{ padding: '20px', paddingLeft: '0px' }}>
           <TextField variant="outlined" label="Nome do item" type="text" style={{ margin: '8px' }} value={item.name || ''} onChange={(e) => setItem({ ...item, name: e.target.value })} />
           <TextField variant="outlined" label={'Quantidade em ' + type} type="number" style={{ margin: '8px' }} value={item.qnt || ''} onChange={(e) => setItem({ ...item, qnt: e.target.value })} />
+          {type === 'kg' ? <TextField variant="outlined" label={'kg de cada pacote'} type="number" style={{ margin: '8px' }} value={item.byPackage || ''} onChange={(e) => setItem({ ...item, byPackage: e.target.value })} /> : null}
           <br />
           <Grid container justify="flex-end">
             <Button
@@ -150,7 +151,8 @@ export default function Root() {
                 newResults[index].qnt = Number(e.target.value)
                 newResults[index].result = []
                 for (let i = 0; i < items.length; i++) {
-                  newResults[index].result.push(`${((items[i].qnt / total) * newResults[index].qnt).toFixed(decimals)} ${type} de ${items[i].name}`)
+                  const result = ((items[i].qnt / total) * newResults[index].qnt).toFixed(decimals);
+                  newResults[index].result.push(`${result} ${type} de ${items[i].name}${type === 'kg' && items[i].byPackage ? ` em ${result/Number(items[i].byPackage)} pacotes de ${items[i].byPackage}kg` : ''}`)
                 }
                 setResults(newResults)
               }}
